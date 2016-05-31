@@ -40,3 +40,14 @@ scrape_configs:
 
     target_groups:
       - targets: ['{{ ansible_docker0.ipv4.address }}:9102']
+
+  - job_name: 'graphite-exporter'
+
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    target_groups:
+      - targets: ['{{ ansible_docker0.ipv4.address }}:9108']
