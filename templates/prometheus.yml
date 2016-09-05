@@ -27,7 +27,7 @@ scrape_configs:
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
 
-    target_groups:
+    static_configs:
       - targets: ['localhost:9090']
 
   - job_name: 'statsd-exporter'
@@ -38,7 +38,7 @@ scrape_configs:
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
 
-    target_groups:
+    static_configs:
       - targets: ['{{ ansible_docker0.ipv4.address }}:9102']
 
   - job_name: 'graphite-exporter'
@@ -49,5 +49,5 @@ scrape_configs:
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
 
-    target_groups:
+    static_configs:
       - targets: ['{{ ansible_docker0.ipv4.address }}:9108']
