@@ -24,6 +24,7 @@
       - "{{ prometheus_port }}:9090"
     volumes:
       - "{{ ext_prometheus_conf_volume }}/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "{{ ext_prometheus_conf_json_volume }}:/etc/prometheus/json"
       - "{{ ext_prometheus_storage_volume }}:/prometheus"
     name: prometheus
     restart_policy: always

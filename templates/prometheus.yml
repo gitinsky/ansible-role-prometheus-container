@@ -51,3 +51,11 @@ scrape_configs:
 
     static_configs:
       - targets: ['{{ ansible_docker0.ipv4.address }}:9108']
+
+  - job_name: 'file-defined-exporters'
+
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+    file_sd_configs:
+      - files: ['/etc/prometheus/json/*.json']
