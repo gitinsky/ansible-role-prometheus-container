@@ -20,8 +20,6 @@
     state: started
     read_only: yes
     hostname: "prom-{{ ansible_hostname }}"
-    dns:
-      - 8.8.8.8
     ports:
       - "{{ prometheus_port }}:9090"
     volumes:
