@@ -26,7 +26,7 @@
       - "{{ ext_prometheus_conf_volume }}/prometheus.yml:/etc/prometheus/prometheus.yml"
       - "{{ ext_prometheus_conf_json_volume }}:/etc/prometheus/json"
       - "{{ ext_prometheus_storage_volume }}:/prometheus"
-    name: prometheus
+    name: "{{ prometheus_container_name }}"
     restart_policy: always
     restart_policy_retry: 10000000
   tags:
